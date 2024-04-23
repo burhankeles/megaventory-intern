@@ -16,14 +16,14 @@ if __name__ == '__main__':
     url_insert_product_location = 'http://127.0.0.1:8005/pl/update_product_location'
 
     data_product1 = {
-        'sku': 33221265511,
+        'sku': 1112256,
         'description': 'Nike shoes',
         'sale_price': 99.99,
         'purchase_price': 44.99,
     }
 
     data_product2 = {
-        'sku': 1122233322,
+        'sku': 1112248,
         'description': 'Adidas shoes',
         'sale_price': 99.99,
         'purchase_price': 44.99,
@@ -31,22 +31,22 @@ if __name__ == '__main__':
 
     data_client = {
         'type': 'Client',
-        'name': 'ba2ddb34uss',
-        'email': 'b2add34bsis@asd.com',
-        'phone_number': 2321312312312,
+        'name': 'babis',
+        'email': 'babis@exampletest.com',
+        'phone_number': 1235698967,
     }
 
     data_supplier = {
         'type': 'Supplier',
-        'name': 'odydd234sssse',
-        'email': ' sdd2ss@ex34amplt.com',
-        'phone_number': 222322232,
+        'name': 'odysseus',
+        'email': 'odysseus@exampletest.com',
+        'phone_number': 1235698988,
     }
 
     data_location = {
-        'abbreviation': '3sd2',
-        'name': '22',
-        'address': '33',
+        'abbreviation': 'Test',
+        'name': 'Test Project Location',
+        'address': 'Example 20, Athens',
     }
 
     product_1 = requests.post(url_insert_product, json=data_product1, headers=headers).json()
@@ -57,13 +57,13 @@ if __name__ == '__main__':
 
     print(product_1, product_2, client, supplier, location)
 
-    data_product_supplier = {
-        'supplier_id': supplier['mvSupplierClient']['SupplierClientID'],
+    data_product_client = {
+        'client_id': client['mvSupplierClient']['SupplierClientID'],
         'product_id': product_1['mvProduct']['ProductID']
     }
 
-    data_product_client = {
-        'client_id': client['mvSupplierClient']['SupplierClientID'],
+    data_product_supplier = {
+        'supplier_id': supplier['mvSupplierClient']['SupplierClientID'],
         'product_id': product_2['mvProduct']['ProductID']
     }
 
